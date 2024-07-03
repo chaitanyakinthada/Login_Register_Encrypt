@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Http
+@model LogInAndRegister.Models.Account
+
+
+@{
+
+    var userId = Context.Session.GetString("userId");
+    
+    if (userId == null)
+    {
+        // Context.Response.Redirect("/Account");  class=""    navbar navbar-inverse navbar-fixed-top
+
+    }
+}
+<form>
+    <input asp-for="Id" hidden />
+    <div class="form-group">
+        <h2 class="text-black-50 pl-3">Welcome @userId</h2>
+        
+    </div>
+
+    <div class="nav-item">
+        <a class="nav-link text-dark"  asp-action="Details">Details</a>
+    </div>
+
+</form>
